@@ -1,1 +1,1 @@
-export { type SignType } from './getSignType';
+export { SignType } from './getSignType';

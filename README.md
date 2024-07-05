@@ -4,6 +4,8 @@
 
 > **Является форком [crypto-pro-web/crypto-pro-js](https://github.com/crypto-pro-web/crypto-pro-js)**
 
+##### окончание -m в названии пакета означает mod
+
 ## Отличия от оригинальной библиотеки:
 
 Методы *createAttachedSignature*, *createDetachedSignature*, *addAttachdeSignature*, *addDetachedSignature* теперь имеют параметр signType, который принимает тип усовершенствованной подписи для создания (типы [описаны тут](https://docs.cryptopro.ru/cades/reference/cadescom/cadescom_enum/cadescom_cades_type) и ниже).

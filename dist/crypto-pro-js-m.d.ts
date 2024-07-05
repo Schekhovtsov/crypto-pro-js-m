@@ -1,4 +1,4 @@
-// Type definitions for crypto-pro-js-m 1.0.0
+// Type definitions for crypto-pro-js-m 1.0.1
 // Project: crypto-pro-js-m
 // Definitions by: Serge Schekhovtsov https://github.com/schekhovtsov
 
