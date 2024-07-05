@@ -2,7 +2,7 @@
 
 Асинхронный JavaScript API для работы с КриптоПРО ЭЦП Browser Plug-In
 
-> **Является форком [crypto-pro-web/crypto-pro-js-pro](https://github.com/crypto-pro-web/crypto-pro-js)**
+> **Является форком [crypto-pro-web/crypto-pro-js](https://github.com/crypto-pro-web/crypto-pro-js)**
 
 ## Отличия от оригинальной библиотеки:
 
@@ -14,7 +14,7 @@
 
 ### Версионность
 
-Пакет основан на версии 2.3.3 пакета [crypto-pro-web/crypto-pro-js-pro](https://github.com/crypto-pro-web/crypto-pro-js)
+Пакет основан на версии 2.3.3 пакета [crypto-pro-web/crypto-pro-js](https://github.com/crypto-pro-web/crypto-pro-js)
 
 
 <a name="lisense"></a>

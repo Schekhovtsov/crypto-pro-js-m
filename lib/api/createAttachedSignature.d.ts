@@ -1,8 +1,10 @@
+import { SignType } from '../helpers/getSignType';
 /**
  * Создает присоединенную подпись сообщения по отпечатку сертификата
  *
  * @param thumbprint - отпечаток сертификата
  * @param message - подписываемое сообщение
- * @returns подпись в формате PKCS#7
+ * @param signType - тип подписи, может быть равен 'CAdES BES', 'CAdES-X Long Type 1', 'CAdES T', 'PKCS7'
+ * @returns подпись в формате signType
  */
-export declare const createAttachedSignature: (thumbprint: string, unencryptedMessage: string | ArrayBuffer) => Promise<string>;
+export declare const createAttachedSignature: (thumbprint: string, unencryptedMessage: string | ArrayBuffer, signType?: SignType) => Promise<string>;

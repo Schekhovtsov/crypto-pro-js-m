@@ -1,9 +1,9 @@
 {
-	"name": "crypto-pro-js",
-	"version": "0.1.3",
+	"name": "crypto-pro-js-m",
+	"version": "0.1.4",
 	"description": "Асинхронный JavaScript API для работы с КриптоПРО ЭЦП Browser Plug-In. Forked from https://github.com/crypto-pro-web/crypto-pro-js",
-	"main": "./lib/crypto-pro-js.js",
-	"types": "./lib/crypto-pro-js.d.ts",
+	"main": "./lib/crypto-pro-js-m.js",
+	"types": "./lib/crypto-pro-js-m.d.ts",
 	"files": [
 		"lib/**/*",
 		"dist/**/*",
@@ -33,7 +33,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/webmasterskaya/crypto-pro-js"
+		"url": "https://github.com/Schekhovtsov/crypto-pro-js-m"
 	},
 	"author": {
 		"name": "Serge Schekhovtsov",
