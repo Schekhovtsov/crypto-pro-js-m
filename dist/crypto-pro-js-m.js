@@ -4768,6 +4768,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(__webpack_require__(/*! ./api */ "./api/index.ts"), exports);
+__exportStar(__webpack_require__(/*! ./helpers */ "./helpers/index.ts"), exports);
 
 
 /***/ }),
@@ -5357,6 +5358,20 @@ exports.getSignType = function (cadesplugin, signType) {
         }
     }
 };
+
+
+/***/ }),
+
+/***/ "./helpers/index.ts":
+/*!**************************!*\
+  !*** ./helpers/index.ts ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
 
 
 /***/ }),
