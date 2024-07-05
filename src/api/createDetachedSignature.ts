@@ -76,12 +76,10 @@ export const createDetachedSignature = _afterPluginsLoaded(
 
         let signature: string;
 
-        const signTypeConst = getSignType(cadesplugin, signType);       
+        const signTypeConst = getSignType(cadesplugin, signType);
 
         try {
-          signature =
-            __cadesAsyncToken__ +
-            cadesSignedData.SignHash(cadesHashedData, cadesSigner, signTypeConst);
+          signature = __cadesAsyncToken__ + cadesSignedData.SignHash(cadesHashedData, cadesSigner, signTypeConst);
         } catch (error) {
           console.error(error);
 
