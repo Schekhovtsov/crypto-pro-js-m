@@ -1,6 +1,6 @@
 {
 	"name": "crypto-pro-js-m",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Асинхронный JavaScript API для работы с КриптоПРО ЭЦП Browser Plug-In. Forked from https://github.com/crypto-pro-web/crypto-pro-js",
 	"main": "./lib/crypto-pro-js-m.js",
 	"types": "./lib/crypto-pro-js-m.d.ts",

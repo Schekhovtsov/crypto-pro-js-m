@@ -1,4 +1,4 @@
-export type SignType = 'CAdES BES' | 'CAdES-X Long Type 1' | 'CAdES T' | 'PKCS7';
+export declare type SignType = 'CAdES BES' | 'CAdES-X Long Type 1' | 'CAdES T' | 'PKCS7';
 
 export const getSignType = (cadesplugin: any, signType: SignType): any => {
   switch (signType) {
