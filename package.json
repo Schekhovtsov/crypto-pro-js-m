@@ -28,7 +28,7 @@
 		"examples-update": "npm run examples-update:script-tag",
 		"examples-update:script-tag": "npm --prefix ./examples/script-tag r crypto-pro-js && npm --prefix ./examples/script-tag i crypto-pro-js",
 		"prepack": "npm run build",
-		"prepublishOnly": "npm run lint && jest && npm run build",
+		"prepublishOnly": "npm run lint && jest && npm run build"
 	},
 	"repository": {
 		"type": "git",
