@@ -1,6 +1,4 @@
 [![License][license-image]][license-url]
-[![NPM version][npm-version-image]][npm-url]
-[![NPM downloads][npm-downloads-image]][downloads-url]
 
 Асинхронный JavaScript API для работы с КриптоПРО ЭЦП Browser Plug-In
 
@@ -25,7 +23,3 @@
 
 [license-url]: /LICENSE
 [license-image]: https://img.shields.io/github/license/webmasterskaya/crypto-pro-js
-[npm-url]: https://npmjs.org/package/crypto-pro-js
-[npm-version-image]: https://img.shields.io/npm/v/crypto-pro-js.svg?style=flat
-[npm-downloads-image]: https://img.shields.io/npm/dm/crypto-pro-js.svg?style=flat
-[downloads-url]: https://npmcharts.com/compare/crypto-pro-js?minimal=true
