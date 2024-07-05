@@ -4,6 +4,7 @@ import { _extractMeaningfulErrorMessage } from '../helpers/_extractMeaningfulErr
 import { __cadesAsyncToken__, __createCadesPluginObject__, _generateCadesFn } from '../helpers/_generateCadesFn';
 import { _getCadesCert } from '../helpers/_getCadesCert';
 import { _getDateObj } from '../helpers/_getDateObj';
+import { SignType, getSignType } from '../helpers/getSignType';
 
 /**
  * Добавляет отсоединенную подпись хеша к подписанному сообщению по отпечатку сертификата
@@ -11,10 +12,16 @@ import { _getDateObj } from '../helpers/_getDateObj';
  * @param thumbprint - отпечаток сертификата
  * @param signedMessage - подписанное сообщение
  * @param messageHash - хеш подписываемого сообщения, сгенерированный по ГОСТ Р 34.11-2012 256 бит
- * @returns подпись в формате PKCS#7
+ * @param signType - тип подписи, может быть равен 'CAdES BES', 'CAdES-X Long Type 1', 'CAdES T', 'PKCS7'
+ * @returns подпись в формате signType
  */
 export const addDetachedSignature = _afterPluginsLoaded(
-  async (thumbprint: string, signedMessage: string | ArrayBuffer, messageHash: string): Promise<string> => {
+  async (
+    thumbprint: string,
+    signedMessage: string | ArrayBuffer,
+    messageHash: string,
+    signType: SignType = 'PKCS7',
+  ): Promise<string> => {
     const { cadesplugin } = window;
     const cadesCertificate = await _getCadesCert(thumbprint);
 
@@ -73,15 +80,11 @@ export const addDetachedSignature = _afterPluginsLoaded(
         }
 
         let signature: string;
+        const signTypeConst = getSignType(cadesplugin, signType);
 
         try {
-          void (
-            __cadesAsyncToken__ +
-            cadesSignedData.VerifyHash(cadesHashedData, signedMessage, cadesplugin.CADESCOM_PKCS7_TYPE)
-          );
-          signature =
-            __cadesAsyncToken__ +
-            cadesSignedData.CoSignHash(cadesHashedData, cadesSigner, cadesplugin.CADESCOM_PKCS7_TYPE);
+          void (__cadesAsyncToken__ + cadesSignedData.VerifyHash(cadesHashedData, signedMessage, signTypeConst));
+          signature = __cadesAsyncToken__ + cadesSignedData.CoSignHash(cadesHashedData, cadesSigner, signTypeConst);
         } catch (error) {
           console.error(error);
 

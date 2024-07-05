@@ -4,16 +4,22 @@ import { _extractMeaningfulErrorMessage } from '../helpers/_extractMeaningfulErr
 import { __cadesAsyncToken__, __createCadesPluginObject__, _generateCadesFn } from '../helpers/_generateCadesFn';
 import { _getCadesCert } from '../helpers/_getCadesCert';
 import { _getDateObj } from '../helpers/_getDateObj';
+import { SignType, getSignType } from '../helpers/getSignType';
 
 /**
  * Создает присоединенную подпись сообщения по отпечатку сертификата
  *
  * @param thumbprint - отпечаток сертификата
  * @param message - подписываемое сообщение
- * @returns подпись в формате PKCS#7
+ * @param signType - тип подписи, может быть равен 'CAdES BES', 'CAdES-X Long Type 1', 'CAdES T', 'PKCS7'
+ * @returns подпись в формате signType
  */
 export const createAttachedSignature = _afterPluginsLoaded(
-  async (thumbprint: string, unencryptedMessage: string | ArrayBuffer): Promise<string> => {
+  async (
+    thumbprint: string,
+    unencryptedMessage: string | ArrayBuffer,
+    signType: SignType = 'PKCS7',
+  ): Promise<string> => {
     const { cadesplugin } = window;
     const cadesCertificate = await _getCadesCert(thumbprint);
 
@@ -70,9 +76,10 @@ export const createAttachedSignature = _afterPluginsLoaded(
         }
 
         let signature: string;
+        const signTypeConst = getSignType(cadesplugin, signType);
 
         try {
-          signature = __cadesAsyncToken__ + cadesSignedData.SignCades(cadesSigner, cadesplugin.CADESCOM_PKCS7_TYPE);
+          signature = __cadesAsyncToken__ + cadesSignedData.SignCades(cadesSigner, signTypeConst);
         } catch (error) {
           console.error(error);
 
